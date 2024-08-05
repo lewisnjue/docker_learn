@@ -31,7 +31,7 @@ command docker ps command
 . and this conatiner is exprosed at port    80 
 . if you run your webserver like mozilla at localhost:8080 the 8080 will 
 be mapped to port 80 of the docker 
-. to do this we simply run =p 8080:80 to say hey map 8080 to 80 when running the container 
+. to do this we simply run -p 8080:80 to say hey map 8080 to 80 when running the container 
 . to stop a container you can run simply the following command 
 docker stop <conatiner_id> 
 . to run this while mapping the port you can simply run the conatiner as follows 
@@ -62,6 +62,18 @@ docker ps -aq | xargs docker rm
 docker ps -aq | xargs docker rm -f
 xargs accept many ids 
          lets look at naming the containers 
-    DOCKER VOLUEMES 
+. to name a container you simply pass --name flag and then pass the name that you want your container to be 
 
-    
+    DOCKER VOLUEMES 
+. VOLUEMES allows sharing of data . files and folders 
+. VOLUEMES allow host to share data to the container and also containers 
+
+. 
+
+to enter the shell of nginx container you can simply run 
+docker exec -it <name_of_container> bash 
+. if you remove re flag while mounitng a volume to a container , this will allow your 
+container to change the content 
+. you can share volumes within conainers by using command volume from command 
+--volumes-from 
+
